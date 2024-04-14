@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Income Calculator</title>
+<link rel="shortcut icon" href="./resources/icon.svg" type="image/x-icon">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="tooltip">
+    <div class="container">
+
+      <form method="" action="">
+        <div class="wrapper">
+          <span class="tooltip not-visible" id="error-age">Error !<span class="tooltip-text" id='age-message'>Please select age group</span></span>
+        </div>
+
+        <div class="wrapper">
+          <label for="gross_income">Enter gross annual income
+          <span class="question-mark tooltip">&#63;<span class="tooltip-text">Gross annual income is your total salary in a year before any deductions</span></span>
+          <input type="text" id="gross_income" name="gross_income" placeholder="Enter gross annual income"></label>
+          <span class="exclamation-mark tooltip not-visible" id="error-gross_income">!<span class="tooltip-text" id="gross-message">Please enter numbers only</span></span>
+        </div>
+
+        <div class="wrapper">
+          <label for="extra_income">Enter extra income
+          <span class="question-mark tooltip">&#63;<span class="tooltip-text">Extra income is not a part of gross income</span></span>
+          <input type="text" id="extra_income" name="extra_income" placeholder="Enter extra income from other sources"></label>
+          <span class="exclamation-mark tooltip not-visible" id="error-extra_income">!<span class="tooltip-text" id="extra-message">Please enter numbers only</span></span>
+        </div>
+
+        <div class="wrapper">
+          <label for="age">Enter age group
+          <span class="question-mark tooltip">&#63; <span class="tooltip-text">Age as on 1st Jan 2024</span></span>
+          <select id="age" name="age" placeholder="">
+            <option value="null" disabled selected></option>
+            <option value="1">&lt 40</option>
+            <option value="2">≥40 & &lt 60</option>
+            <option value="3">≥ 60</option>
+          </select>
+          </label>
+        </div>
+
+        <div class="wrapper">
+          <label for="deductions">Enter total applicable deductions
+          <span class="question-mark tooltip">&#63;<span class="tooltip-text">Subtract in hand salary from sum of gross & extra income</span></span>
+          <input type="text" id="deductions" name="deductions" placeholder="Add total applicable deductions"></label>
+          <span class="exclamation-mark tooltip not-visible" id="error-deductions">!<span class="tooltip-text" id="deductions-message">Please enter numbers only</span></span>
+        </div>
+
+        <div class="wrapper">
+          <input class="button" id="submit" type="submit" value="Submit">
+        </div>
+
+      </form>
+    </div>
+  </section>
+
+  <section class="result">
+    <div class="not-visible" id="result">
+      <h1>Your overall income will be</h1>
+      <h2 id="amount">0</h2>
+      <p>after tax deductions</p>
+      <button class="button" id="close">Close</button>
+    </div>
+</section>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script src="./script.js"></script>
+
+</html>
